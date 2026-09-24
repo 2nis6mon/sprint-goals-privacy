@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — Sprint Goals Board pour Jira</title>
+<meta name="description" content="Politique de confidentialité de l'extension Chrome Sprint Goals Board pour Jira.">
+<style>
+  :root {
+    --bg: #f7f8fa; --surface: #ffffff; --ink: #15181d; --ink-2: #3f444d; --line: #e2e5ea; --accent: #2563eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #15181d; --surface: #1d2127; --ink: #eceef2; --ink-2: #b8bec8; --line: #2e333b; --accent: #7aa7ff; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  article { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px 24px 8px; margin-bottom: 24px; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p, li { color: var(--ink-2); }
+  ul { padding-left: 1.2em; }
+  .meta { margin: 0 0 16px; font-size: 0.9rem; }
+  nav { margin-bottom: 16px; font-size: 0.95rem; }
+  a { color: var(--accent); }
+  code { font-size: 0.9em; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="#fr">Français</a> · <a href="#en">English</a></nav>
+
+<article id="fr" lang="fr">
+<h1>Politique de confidentialité — Sprint Goals Board pour Jira</h1>
+<p class="meta">Dernière mise à jour : 24 septembre 2026 · Éditeur : Denis Simon Consulting · Contact : <a href="mailto:denis.simon.consulting@gmail.com">denis.simon.consulting@gmail.com</a></p>
+
+<p>Sprint Goals Board pour Jira (« l'extension ») est une extension Chrome qui affiche les boards
+Scrum de Jira Cloud en swimlanes par Sprint Goal. Cette page explique quelles données elle utilise,
+où elles vont et comment les effacer.</p>
+
+<h2>En résumé</h2>
+<ul>
+  <li>L'extension lit vos données <strong>directement dans votre Jira</strong>, depuis votre navigateur, avec votre propre session.</li>
+  <li><strong>Aucune donnée n'est envoyée à l'éditeur ni à un tiers</strong> : pas de serveur de l'éditeur, pas de mesure d'audience, pas de publicité, aucune vente de données.</li>
+  <li>Vos réglages restent <strong>dans votre navigateur</strong>, sauf les réglages d'équipe que vous choisissez de publier dans Jira.</li>
+  <li>L'extension n'écrit dans Jira que sur <strong>un geste explicite</strong> de votre part.</li>
+</ul>
+
+<h2>Données consultées</h2>
+<p>Uniquement sur le site Jira Cloud (<code>*.atlassian.net</code>) que vous choisissez de connecter,
+et seulement après votre accord dans la fenêtre d'autorisation de Chrome :</p>
+<ul>
+  <li>votre compte Jira (identifiant de compte et nom affiché), pour des filtres comme « Mes tickets » ;</li>
+  <li>les boards, sprints, colonnes, filtres rapides et types de tickets ;</li>
+  <li>les tickets des sprints actifs : clé, résumé, statut, type, priorité, personne assignée, story points, étiquettes, liens, historique des statuts et les champs que vous choisissez d'afficher ;</li>
+  <li>les Goals Atlassian associés aux tickets et au sprint, lus par la passerelle de votre site Atlassian ;</li>
+  <li>les icônes de types et de priorités de Jira.</li>
+</ul>
+<p>Ces données sont affichées dans l'extension et ne quittent pas votre navigateur, sauf vers votre propre site Jira.</p>
+
+<h2>Données enregistrées dans votre navigateur</h2>
+<p>Dans le stockage local de Chrome (<code>chrome.storage.local</code>), sur votre appareil uniquement,
+jamais synchronisé avec votre compte Google :</p>
+<ul>
+  <li>l'adresse du site Jira connecté ;</li>
+  <li>les boards ajoutés et leurs réglages d'affichage : colonnes, ordre et couleurs des swimlanes, champs des cartes, règles de couleur, durée de la daily, etc. ;</li>
+  <li>des préférences d'interface : largeur de la barre latérale, panneau de santé ouvert ou fermé, messages déjà fermés ;</li>
+  <li>un journal des écritures faites dans Jira depuis l'extension (500 au plus) : date, site, action, clé du ticket, avant et après, résultat. Il sert à vérifier ce que l'extension a fait ;</li>
+  <li>un réglage technique pour la passerelle des Goals Atlassian.</li>
+</ul>
+
+<h2>Ce que l'extension écrit dans Jira</h2>
+<p>Seulement sur votre geste explicite (glisser-déposer, validation d'un formulaire, bouton), dans votre Jira et avec vos droits :</p>
+<ul>
+  <li>le changement de statut d'un ticket (transition), avec les champs du formulaire de transition que vous remplissez : commentaire, temps passé, story points, etc. ;</li>
+  <li>le rang (l'ordre) d'un ticket ;</li>
+  <li>le rattachement d'un ticket à un Goal Atlassian, ou son retrait ;</li>
+  <li>les Goals épinglés au sprint, dans une propriété du sprint ;</li>
+  <li>les réglages d'équipe, quand vous cliquez sur « Publier pour l'équipe », dans une propriété du board. Ils contiennent des réglages d'affichage ainsi que le nom et l'identifiant de compte de la personne qui a publié, <strong>visibles par toute personne qui peut voir ce board</strong>.</li>
+</ul>
+<p>L'outil de diagnostic peut aussi, sur votre clic, écrire puis supprimer aussitôt une propriété de test sur un sprint.</p>
+
+<h2>Autorisations demandées</h2>
+<ul>
+  <li><strong>Accès au site Jira que vous choisissez</strong> (<code>https://votre-site.atlassian.net/*</code>), demandé au moment de la connexion : pour lire et écrire ce qui est décrit ci-dessus. L'extension n'accède à aucun autre site.</li>
+  <li><strong>Stockage</strong> : pour garder vos réglages dans votre navigateur.</li>
+  <li><strong>Règle d'en-tête réseau</strong> (<code>declarativeNetRequestWithHostAccess</code>) : pour que la passerelle des Goals Atlassian de votre site accepte les requêtes de l'extension. La règle ne touche que ces requêtes, émises par l'extension vers votre site.</li>
+</ul>
+
+<h2>Conservation et suppression</h2>
+<ul>
+  <li><strong>Se déconnecter</strong> (Administration → Se déconnecter) efface le site, les boards, leurs réglages, les messages fermés et le journal des écritures de ce site, et rend à Chrome l'accès au site. Restent les préférences d'interface, qui ne contiennent aucune donnée Jira.</li>
+  <li><strong>Désinstaller l'extension</strong> efface tout ce qu'elle a enregistré dans votre navigateur.</li>
+  <li>Ce qui a été écrit dans Jira (statuts, rangs, rattachements, propriétés du sprint ou du board) reste dans Jira, comme toute modification faite dans Jira. Cela relève de votre organisation et d'Atlassian. Un administrateur Jira peut supprimer les propriétés de sprint ou de board.</li>
+</ul>
+
+<h2>Utilisation limitée</h2>
+<p>L'utilisation des informations reçues par l'extension respecte le
+<a href="https://developer.chrome.com/docs/webstore/program-policies/policies" rel="noopener noreferrer">règlement du Chrome Web Store sur les données des utilisateurs</a>,
+y compris ses exigences d'utilisation limitée. Les données servent uniquement à la fonction unique de l'extension :
+afficher et mettre à jour votre board Jira. Elles ne sont ni vendues, ni transférées, ni utilisées à des fins publicitaires ou d'évaluation de solvabilité,
+et aucune personne n'y a accès en dehors de vous.</p>
+
+<h2>Modifications</h2>
+<p>En cas de changement, cette page est mise à jour et sa date modifiée.</p>
+
+<h2>Contact</h2>
+<p>Pour toute question : <a href="mailto:denis.simon.consulting@gmail.com">denis.simon.consulting@gmail.com</a>.</p>
+</article>
+
+<article id="en" lang="en">
+<h1>Privacy Policy — Sprint Goals Board pour Jira</h1>
+<p class="meta">Last updated: September 24, 2026 · Publisher: Denis Simon Consulting · Contact: <a href="mailto:denis.simon.consulting@gmail.com">denis.simon.consulting@gmail.com</a></p>
+
+<p>Sprint Goals Board pour Jira (“the extension”) is a Chrome extension that displays Jira Cloud Scrum
+boards as swimlanes grouped by Sprint Goal. This page explains which data it uses, where it goes and how to delete it.</p>
+
+<h2>Summary</h2>
+<ul>
+  <li>The extension reads your data <strong>directly from your Jira site</strong>, from your browser, using your own session.</li>
+  <li><strong>No data is sent to the publisher or to any third party</strong>: no publisher server, no analytics, no advertising, no sale of data.</li>
+  <li>Your settings stay <strong>in your browser</strong>, except the team settings you explicitly choose to publish to Jira.</li>
+  <li>The extension writes to Jira only after <strong>an explicit action</strong> from you.</li>
+</ul>
+
+<h2>Data accessed</h2>
+<p>Only on the Jira Cloud site (<code>*.atlassian.net</code>) you choose to connect, and only after you approve Chrome's permission prompt:</p>
+<ul>
+  <li>your Jira account (account ID and display name), for filters such as “My issues”;</li>
+  <li>boards, sprints, columns, quick filters and issue types;</li>
+  <li>issues in active sprints: key, summary, status, type, priority, assignee, story points, labels, links, status history and the fields you choose to display;</li>
+  <li>Atlassian Goals linked to issues and to the sprint, read through your Atlassian site's gateway;</li>
+  <li>Jira issue type and priority icons.</li>
+</ul>
+<p>This data is displayed in the extension and never leaves your browser, except to your own Jira site.</p>
+
+<h2>Data stored in your browser</h2>
+<p>In Chrome local storage (<code>chrome.storage.local</code>), on your device only, never synced to your Google account:</p>
+<ul>
+  <li>the address of the connected Jira site;</li>
+  <li>the boards you added and their display settings: columns, swimlane order and colors, card fields, color rules, daily duration, etc.;</li>
+  <li>interface preferences: sidebar width, health panel open or closed, dismissed messages;</li>
+  <li>a log of the writes made to Jira from the extension (500 at most): date, site, action, issue key, before and after, outcome. It lets you check what the extension did;</li>
+  <li>a technical setting for the Atlassian Goals gateway.</li>
+</ul>
+
+<h2>What the extension writes to Jira</h2>
+<p>Only after your explicit action (drag and drop, form submission, button), in your Jira site and with your permissions:</p>
+<ul>
+  <li>an issue status change (transition), with the transition form fields you fill in: comment, time spent, story points, etc.;</li>
+  <li>an issue's rank (order);</li>
+  <li>linking an issue to an Atlassian Goal, or unlinking it;</li>
+  <li>the Goals pinned to the sprint, in a sprint property;</li>
+  <li>team settings, when you click “Publier pour l'équipe” (publish for the team), in a board property. They contain display settings plus the name and account ID of the person who published them, <strong>visible to anyone who can view that board</strong>.</li>
+</ul>
+<p>When you click it, the diagnostic tool can also write a test property on a sprint and delete it immediately.</p>
+
+<h2>Permissions requested</h2>
+<ul>
+  <li><strong>Access to the Jira site you choose</strong> (<code>https://your-site.atlassian.net/*</code>), requested when you connect: to read and write what is described above. The extension accesses no other site.</li>
+  <li><strong>Storage</strong>: to keep your settings in your browser.</li>
+  <li><strong>Network header rule</strong> (<code>declarativeNetRequestWithHostAccess</code>): so that your site's Atlassian Goals gateway accepts the extension's requests. The rule only affects those requests, sent by the extension to your site.</li>
+</ul>
+
+<h2>Retention and deletion</h2>
+<ul>
+  <li><strong>Disconnecting</strong> (Administration → Se déconnecter) deletes the site, the boards, their settings, dismissed messages and the write log for that site, and gives the site access back to Chrome. Interface preferences, which contain no Jira data, remain.</li>
+  <li><strong>Uninstalling the extension</strong> deletes everything it stored in your browser.</li>
+  <li>What was written to Jira (statuses, ranks, Goal links, sprint or board properties) stays in Jira, like any change made in Jira. It is governed by your organization and by Atlassian. A Jira administrator can delete the sprint or board properties.</li>
+</ul>
+
+<h2>Limited Use</h2>
+<p>The use of information received by the extension adheres to the
+<a href="https://developer.chrome.com/docs/webstore/program-policies/policies" rel="noopener noreferrer">Chrome Web Store User Data Policy</a>,
+including the Limited Use requirements. Data is used only for the extension's single purpose:
+displaying and updating your Jira board. It is not sold, transferred, used for advertising or creditworthiness,
+and no human other than you has access to it.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, this page will be updated along with its date.</p>
+
+<h2>Contact</h2>
+<p>For any question: <a href="mailto:denis.simon.consulting@gmail.com">denis.simon.consulting@gmail.com</a>.</p>
+</article>
+</main>
+</body>
+</html>
