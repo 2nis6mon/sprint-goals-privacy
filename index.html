@@ -45,7 +45,7 @@ où elles vont et comment les effacer.</p>
 <ul>
   <li>L'extension lit vos données <strong>directement dans votre Jira</strong>, depuis votre navigateur, avec votre propre session.</li>
   <li><strong>Aucune donnée n'est envoyée à l'éditeur ni à un tiers</strong> : pas de serveur de l'éditeur, pas de mesure d'audience, pas de publicité, aucune vente de données.</li>
-  <li>Vos réglages restent <strong>dans votre navigateur</strong>, sauf les réglages d'équipe que vous choisissez de publier dans Jira.</li>
+  <li>Vos préférences personnelles restent <strong>dans votre navigateur</strong>. Les réglages du board que vous modifiez sont enregistrés dans votre Jira, pour être partagés avec votre équipe.</li>
   <li>L'extension n'écrit dans Jira que sur <strong>un geste explicite</strong> de votre part.</li>
 </ul>
 
@@ -54,7 +54,7 @@ où elles vont et comment les effacer.</p>
 et seulement après votre accord dans la fenêtre d'autorisation de Chrome :</p>
 <ul>
   <li>votre compte Jira (identifiant de compte et nom affiché), pour des filtres comme « Mes tickets » ;</li>
-  <li>les boards, sprints, colonnes, filtres rapides et types de tickets ;</li>
+  <li>les boards, sprints, colonnes, filtres rapides et types de tickets, ainsi que votre droit de modifier le board (pour ne proposer la modification de ses réglages qu'à qui peut les enregistrer) ;</li>
   <li>les tickets des sprints actifs : clé, résumé, statut, type, priorité, personne assignée, story points, étiquettes, liens, historique des statuts et les champs que vous choisissez d'afficher ;</li>
   <li>les Goals Atlassian associés aux tickets et au sprint, lus par la passerelle de votre site Atlassian ;</li>
   <li>les icônes de types et de priorités de Jira.</li>
@@ -66,7 +66,7 @@ et seulement après votre accord dans la fenêtre d'autorisation de Chrome :</p>
 jamais synchronisé avec votre compte Google :</p>
 <ul>
   <li>l'adresse du site Jira connecté ;</li>
-  <li>les boards ajoutés et leurs réglages d'affichage : colonnes, ordre et couleurs des swimlanes, champs des cartes, règles de couleur, durée de la daily, etc. ;</li>
+  <li>les boards ajoutés et une copie de leurs réglages d'affichage : colonnes, ordre et couleurs des swimlanes, champs des cartes, règles de couleur, durée de la daily, etc. ;</li>
   <li>des préférences d'interface : largeur de la barre latérale, panneau de santé ouvert ou fermé, messages déjà fermés ;</li>
   <li>un journal des écritures faites dans Jira depuis l'extension (500 au plus) : date, site, action, clé du ticket, avant et après, résultat. Il sert à vérifier ce que l'extension a fait ;</li>
   <li>un réglage technique pour la passerelle des Goals Atlassian.</li>
@@ -79,7 +79,7 @@ jamais synchronisé avec votre compte Google :</p>
   <li>le rang (l'ordre) d'un ticket ;</li>
   <li>le rattachement d'un ticket à un Goal Atlassian, ou son retrait ;</li>
   <li>les Goals épinglés au sprint, dans une propriété du sprint ;</li>
-  <li>les réglages d'équipe, quand vous cliquez sur « Publier pour l'équipe », dans une propriété du board. Ils contiennent des réglages d'affichage ainsi que le nom et l'identifiant de compte de la personne qui a publié, <strong>visibles par toute personne qui peut voir ce board</strong>.</li>
+  <li>les réglages du board (colonnes, ordre et couleurs des swimlanes, champs des cartes, daily…), à chaque modification que vous en faites, dans une propriété du board, et seulement si vous avez le droit de modifier ce board. Ils contiennent des réglages d'affichage ainsi que le nom et l'identifiant de compte de la dernière personne qui les a modifiés, <strong>visibles par toute personne qui peut voir ce board</strong>.</li>
 </ul>
 <p>L'outil de diagnostic peut aussi, sur votre clic, écrire puis supprimer aussitôt une propriété de test sur un sprint.</p>
 
@@ -122,7 +122,7 @@ boards as swimlanes grouped by Sprint Goal. This page explains which data it use
 <ul>
   <li>The extension reads your data <strong>directly from your Jira site</strong>, from your browser, using your own session.</li>
   <li><strong>No data is sent to the publisher or to any third party</strong>: no publisher server, no analytics, no advertising, no sale of data.</li>
-  <li>Your settings stay <strong>in your browser</strong>, except the team settings you explicitly choose to publish to Jira.</li>
+  <li>Your personal preferences stay <strong>in your browser</strong>. The board settings you change are saved in your Jira site, to be shared with your team.</li>
   <li>The extension writes to Jira only after <strong>an explicit action</strong> from you.</li>
 </ul>
 
@@ -130,7 +130,7 @@ boards as swimlanes grouped by Sprint Goal. This page explains which data it use
 <p>Only on the Jira Cloud site (<code>*.atlassian.net</code>) you choose to connect, and only after you approve Chrome's permission prompt:</p>
 <ul>
   <li>your Jira account (account ID and display name), for filters such as “My issues”;</li>
-  <li>boards, sprints, columns, quick filters and issue types;</li>
+  <li>boards, sprints, columns, quick filters and issue types, and whether you may edit the board (so that only people who can save its settings are offered to change them);</li>
   <li>issues in active sprints: key, summary, status, type, priority, assignee, story points, labels, links, status history and the fields you choose to display;</li>
   <li>Atlassian Goals linked to issues and to the sprint, read through your Atlassian site's gateway;</li>
   <li>Jira issue type and priority icons.</li>
@@ -141,7 +141,7 @@ boards as swimlanes grouped by Sprint Goal. This page explains which data it use
 <p>In Chrome local storage (<code>chrome.storage.local</code>), on your device only, never synced to your Google account:</p>
 <ul>
   <li>the address of the connected Jira site;</li>
-  <li>the boards you added and their display settings: columns, swimlane order and colors, card fields, color rules, daily duration, etc.;</li>
+  <li>the boards you added and a copy of their display settings: columns, swimlane order and colors, card fields, color rules, daily duration, etc.;</li>
   <li>interface preferences: sidebar width, health panel open or closed, dismissed messages;</li>
   <li>a log of the writes made to Jira from the extension (500 at most): date, site, action, issue key, before and after, outcome. It lets you check what the extension did;</li>
   <li>a technical setting for the Atlassian Goals gateway.</li>
@@ -154,7 +154,7 @@ boards as swimlanes grouped by Sprint Goal. This page explains which data it use
   <li>an issue's rank (order);</li>
   <li>linking an issue to an Atlassian Goal, or unlinking it;</li>
   <li>the Goals pinned to the sprint, in a sprint property;</li>
-  <li>team settings, when you click “Publier pour l'équipe” (publish for the team), in a board property. They contain display settings plus the name and account ID of the person who published them, <strong>visible to anyone who can view that board</strong>.</li>
+  <li>board settings (columns, swimlane order and colors, card fields, daily…), each time you change them, in a board property, and only if you are allowed to edit that board. They contain display settings plus the name and account ID of the last person who changed them, <strong>visible to anyone who can view that board</strong>.</li>
 </ul>
 <p>When you click it, the diagnostic tool can also write a test property on a sprint and delete it immediately.</p>
 
